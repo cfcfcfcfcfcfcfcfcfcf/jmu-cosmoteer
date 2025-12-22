@@ -1,0 +1,23 @@
+ID = air.jmu
+
+Name = "JMU Overhaul"
+
+Version = 0.0.0
+
+CompatibleGameVersions = ["2"]
+
+ModifiesGameplay = true
+
+Author = "Air"
+
+Logo = "logo.png"
+
+Description = "Overhaul mod based of Jaina's Mark universe"\
+			  "Jaina's Mark by Bussie Idahoe"
+
+StringsFolder = "strings"
+
+Actions
+[
+	//nothing for now
+]
