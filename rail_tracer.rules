@@ -1,0 +1,133 @@
+ID = "air.rail_tracer"
+Range = 1000
+IdealRange = 500
+Speed = 120
+FrontBeam = &<rail_beam_front.rules>
+LeftBeam = &<rail_beam_left.rules>
+RightBeam = &<rail_beam_right.rules>
+
+BASE_DAMAGE = 100
+SHIElD_IMPULSE = 40
+
+Components
+{
+	Physics
+	{
+		Type = CirclePhysics //TODO
+		Radius = .6
+		Density = 0.1
+		LinearDamping = 2.5
+		FrameOfReferenceDuration = 1
+	}
+
+	Death
+	{
+		Type = DeathByLifetime //Automatically calculated
+	}
+	
+	FrontHitDeath
+	{
+		Type = Targetable
+		Health = 1
+		TargetCategory = "rail_tracer_front"
+		OnDeath
+		{
+			//TODO
+		}
+	}
+
+	LeftHitDeath
+	{
+		Type = Targetable
+		Health = 1
+		TargetCategory = "rail_tracer_left"
+		OnDeath
+		{
+			//TODO
+		}
+	}
+
+	RightHitDeath
+	{
+		Type = Targetable
+		Health = 1
+		TargetCategory = "rail_tracer_right"
+		OnDeath
+		{
+			//TODO
+		}
+	}
+
+	Hit
+	{
+		Type = PenetratingHit
+		Penetration = 50 //TODO
+		PenetrationSpeed = 25 //TODO
+		PenetratesOperational = false
+		FactorEffectsWith = Targetable
+
+		CrewCollisions = {Enemies=true; Junk=true}
+		PenetratesCrew = true
+		HitCrew = &HitShield
+
+		HitShield
+		{
+			ReduceEffectsByPenetration = true
+			Offset = [-0.15, 0] //TODO
+			HitEffects
+			[
+				{
+					Type = Damage
+					Damage = { BaseValue = BASE_DAMAGE; EffectScaleExponent = 1 }
+				}
+				{
+					Type = Impulse
+					Impule = { BaseValue = SHIELD_IMPULSE; EffectScaleExponent = 1 }
+			]
+
+			MediaEffects
+			[
+				//TODO
+			]
+		}
+		
+		HitOperational
+		{
+			//No effect
+		}
+		HitStructural
+		{
+			//No effect
+		}
+		PenetratingOperational
+		{
+			//No effect
+		}
+		PenetratingStructural
+		{
+			//No effect
+		}
+		FinishedPenetratingOperational = &PenetratingOperational
+		FinishedPenetratingStructural = &PenetratingStructural
+	}
+
+	Sprite
+	{
+		Type = Sprite
+		Sprite
+		{
+			Texture
+			{
+				File = "missile_nuke.png" //TODO
+				MipLevels = max
+			}
+			Size = [3, 1.5]
+		}
+
+//		NormalsTexture
+//		{
+//			File = "missile_nuke_normals.png" //TODO
+//			MipLevels = max
+//		}
+	}
+}
