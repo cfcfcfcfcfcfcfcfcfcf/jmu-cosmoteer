@@ -12,12 +12,12 @@ Author = "Air"
 
 Logo = "logo.png"
 
-Description = "Overhaul mod based of Jaina's Mark universe"\
+Description = "Overhaul mod based of Jaina's Mark universe\n\n"\
 			  "Jaina's Mark by Bussie Idahoe"
 
 StringsFolder = "strings"
 
 Actions
 [
-	//nothing for now
+	//TODO
 ]

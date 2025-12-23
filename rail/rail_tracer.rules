@@ -2,9 +2,10 @@ ID = "air.rail_tracer"
 Range = 1000
 IdealRange = 500
 Speed = 120
-FrontBeam = &<rail_beam_front.rules>
-LeftBeam = &<rail_beam_left.rules>
-RightBeam = &<rail_beam_right.rules>
+
+FRONT_BEAM = &<rail_beam/rail_beam_front.rules>
+LEFT_BEAM = &<rail_beam/rail_beam_left.rules>
+RIGHT_BEAM = &<rail_beam/rail_beam_right.rules>
 
 BASE_DAMAGE = 100
 SHIElD_IMPULSE = 40
@@ -61,6 +62,7 @@ Components
 				{
 					Type = Impulse
 					Impule = { BaseValue = SHIELD_IMPULSE; EffectScaleExponent = 1 }
+				}
 			]
 
 			MediaEffects
@@ -96,7 +98,7 @@ Components
 		{
 			Texture
 			{
-				File = "missile_nuke.png" //TODO
+				File = "temp_rail.png" //TODO
 				MipLevels = max
 			}
 			Size = [3, 1.5]
