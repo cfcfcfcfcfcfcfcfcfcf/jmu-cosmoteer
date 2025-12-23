@@ -25,33 +25,11 @@ Components
 		Type = DeathByLifetime //Automatically calculated
 	}
 	
-	FrontHitDeath
+	HitDeath
 	{
 		Type = Targetable
 		Health = 1
-		TargetCategory = "rail_tracer_front"
-		OnDeath
-		{
-			//TODO
-		}
-	}
-
-	LeftHitDeath
-	{
-		Type = Targetable
-		Health = 1
-		TargetCategory = "rail_tracer_left"
-		OnDeath
-		{
-			//TODO
-		}
-	}
-
-	RightHitDeath
-	{
-		Type = Targetable
-		Health = 1
-		TargetCategory = "rail_tracer_right"
+		TargetCategory = "rail_tracer"
 		OnDeath
 		{
 			//TODO
